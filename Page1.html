@@ -3,16 +3,17 @@
 <head>
 <title>Production Enhancement Request</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="angular.js" type="text/javascript"></script>
 </head>
-<body>
-<form id="usrform1">
+<body ng-app="">
+<form id="userform1">
   <fieldset>
     <legend><h2>Request from Client</h2></legend>
     Requester Name/E-mail:
     <input type="text" name="requester">
     <br /><br />
-    Summary:<br />
-    <textarea rows="4" cols="50" name="summary" form="usrform"></textarea>
+    Summary<font color="red">*</font>:<br />
+    <textarea rows="4" cols="50" name="summary" form="userform1"></textarea>
     <br /><br />
     Buisness View:
     <input type="text" name="bView" maxlength="25">
@@ -21,21 +22,21 @@
     <input type="text" name="division" maxlength="80">
     <br /><br />
     Case Number:
-    <input type="number" name="caseNum">
+    <input type="number" name="caseNum" min="1">
     <br /><br />
     Requested Completion Date:
     <input type="date" name="reqCompletionDate">
     <br /><br />
     Type of Request:<br />
-    <input type="checkbox" name="requestType1" value="newMap">New Map <br />
-    <input type="checkbox" name="requestType1" value="dataFlows">  Data Flow/Communications <br />
-    <input type="checkbox" name="requestType1" value="archiveDataRetrieval"> Archive data retrieval <br />
-    <input type="checkbox" name="requestType1" value="newTP">  New Trading Partner (TP)  <br />
-    <input type="checkbox" name="requestType1" value="other">   Other (reporting, etc., describe below) <br />
-    <input type="checkbox" name="requestType1" value="newDoc"> New Doc/version for existing TP
+    <input type="checkbox" name="requestType1" value="newMap" ng-model="newmap">&nbsp;New Map<br />
+    <input type="checkbox" name="requestType1" value="dataFlows" ng-model="dataflowcomm">&nbsp;Data Flow/Communications<br />
+    <input type="checkbox" name="requestType1" value="archiveDataRetrieval" ng-model="adataretrieval">&nbsp;Archive Data Retrieval<br />
+    <input type="checkbox" name="requestType1" value="newTP" ng-model="newtradingp">&nbsp;New Trading Partner (TP) <br />
+    <input type="checkbox" name="requestType1" value="other" ng-model="others">&nbsp;Other (reporting, etc., describe below)<br />
+    <input type="checkbox" name="requestType1" value="newDoc" ng-model="newdocument">&nbsp;New Doc/Version for existing TP
     <br /><br />
-    Detailed description of request*:<br />
-    <textarea rows="4" cols="50" name="detailDiscrip" form="usrform"></textarea>
+    Detailed description of request<font color="red">*</font>:<br />
+    <textarea rows="4" cols="50" name="detailDiscrip" form="userform1"></textarea>
     <br /><br />
     Outbound files Preference:<br />
     <input type="radio" name="outboundFilePreference" value="batched">Batched<br />
@@ -51,7 +52,7 @@
   </fieldset>
 </form>
 
-<form id="usrform2">
+<form id="userform2" ng-show="newmap">
   <fieldset>
     <legend><h2>Map Change Details</h2></legend>
     Map Name to Change:
@@ -72,11 +73,11 @@
     <input type="text" name="transtypedir" placeholder="Ex: X12 850 v.4010" maxlength="50">
     <br /><br />
     Application Layout:<br /><br />
-    <input type="radio" name="applayout" value="useexistingapp">Use existing app layout (specify below)&nbsp;<input type="radio" name="applayout" value="usenewapp">Use new app layout (included with request)
+    <input type="radio" name="applayout" value="useexistingapp">&nbsp;Use existing app layout (specify below)&nbsp;&nbsp;<input type="radio" name="applayout" value="usenewapp">&nbsp;Use new app layout (included with request)
     <br /><br />
-    Existing app layout to use: <input type="text" name="applayoutdetails" maxlength="50" size="50">
+    Existing app layout to use<font color="red">*</font>: <input type="text" name="applayoutdetails" maxlength="50" size="50">
     <br /><br />
-    Existing maps to use (if applicable):<br /><textarea name="existingmapstouse" cols="50" rows="5" form="usrform2"></textarea>
+    Existing maps to use (if applicable):<br /><textarea name="existingmapstouse" cols="50" rows="5" form="userform2"></textarea>
     <br /><br />
     Ensure that you have included:<br /><br />
     A test file from TP (if Inbound Map): <input type="file" accept=".*" multiple> &nbsp; <input type="submit" value="Upload">
@@ -89,7 +90,7 @@
   </fieldset>
 </form>
 
-<form id="usrform3">
+<form id="userform3" ng-show="newtradingp">
   <fieldset>
     <legend><h2>TP Details</h2></legend>
     TP Company Name:
@@ -111,97 +112,97 @@
     <input type="text" name="suppliernum" maxlength="50">
     <br /><br />
     TP Lookup (application parent, SAP, etc):
-    <textarea name="tplookup" cols="50" rows="5" form="usrform3"></textarea>
+    <textarea name="tplookup" cols="50" rows="5" form="userform3"></textarea>
     <br /><br />
     TP Test Sender/Receiver Ids (include qualifiers, ISA and GS, UNB, UNH etc.):
-    <textarea name="tptestsendrecid" cols="50" rows="5" form="usrform3"></textarea>
+    <textarea name="tptestsendrecid" cols="50" rows="5" form="userform3"></textarea>
     <br /><br />
     TP Prod Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):
-    <textarea name="tpprodsendrecid" cols="50" rows="5" form="usrform3"></textarea>
+    <textarea name="tpprodsendrecid" cols="50" rows="5" form="userform3"></textarea>
     <br /><br />
     Client Test Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):
-    <textarea name="clienttestsendrecid" cols="50" rows="5" form="usrform3"></textarea>
+    <textarea name="clienttestsendrecid" cols="50" rows="5" form="userform3"></textarea>
     <br /><br />
     Client Prod Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):
-    <textarea name="clientprodsendrecid" cols="50" rows="5" form="usrform3"></textarea>
+    <textarea name="clientprodsendrecid" cols="50" rows="5" form="userform3"></textarea>
     <br /><br />
     Communications Method (if existing communication, please include process ID):
-    <textarea name="commmethod" cols="50" rows="5" form="usrform3"></textarea>
+    <textarea name="commmethod" cols="50" rows="5" form="userform3"></textarea>
     <br /><br />
     Which direction, standard, documents and versions will be traded?:
-    <textarea name="whichdir" cols="50" rows="5" form="usrform3"></textarea>
+    <textarea name="whichdir" cols="50" rows="5" form="userform3"></textarea>
     <br /><br />
     When will testing start? When will TP go-live?:
-    <textarea name="whentestingstart" cols="50" rows="5" form="usrform3"></textarea>
+    <textarea name="whentestingstart" cols="50" rows="5" form="userform3"></textarea>
     <br /><br />
   </fieldset>
 </form>
 
-<form id="usrform4">
+<form id="userform4" ng-show="dataflowcomm">
   <fieldset>
     <legend><h2>Data Flow Communication Details</h2></legend>
     Type of Request:<br />
-    <input type="radio" name="requestType2" value="newDataFlow">New Data Flow (Connect: Direct routing, new path etc)<br />
-    <input type="radio" name="requestType2" value="changeExistingDataFlow">Changes to existing data flow<br />
-    <input type="radio" name="requestType2" value="newCommFlow">New communications flow (VAN or AS2 protocol, for TP or client use)<br />
-    <input type="radio" name="requestType2" value="changeTypeOfComm">Changes to type of communications (HTTPS, FTP etc)<br />
+    <input type="radio" name="requestType2" value="newDataFlow">&nbsp;New Data Flow (Connect: Direct routing, new path etc)<br />
+    <input type="radio" name="requestType2" value="changeExistingDataFlow">&nbsp;Changes to existing data flow<br />
+    <input type="radio" name="requestType2" value="newCommFlow">&nbsp;New communications flow (VAN or AS2 protocol, for TP or client use)<br />
+    <input type="radio" name="requestType2" value="changeTypeOfComm">&nbsp;Changes to type of communications (HTTPS, FTP etc)<br />
     <br /><br />
     Details of data flow request:
-    <textarea name="dataFlowReqDetails" cols="50" rows="5" form="usrform4"></textarea>
+    <textarea name="dataFlowReqDetails" cols="50" rows="5" form="userform4"></textarea>
     <br /><br />
   </fieldset>
 </form>
 
-<form id="usrform5">
+<form id="userform5" ng-show="adataretrieval">
   <fieldset>
     <legend><h2>Archive Data Retrieval Details</h2></legend>
     Trading Partner Identifier (Provide the ISA, UNB etc, ID for the trading partner):
-    <textarea name="TPidentifier" cols="50" rows="5" form="usrform5"></textarea>
+    <textarea name="TPidentifier" cols="50" rows="5" form="userform5"></textarea>
     <br /><br />
     Date of the data requested: <input type="date" name="dataReqDate">
     <br /><br />    
     Identifying information about the data (such as PO #, Invoice #, ISA control # etc):
-    <textarea name="dataInfo" cols="50" rows="5" form="usrform5"></textarea>
+    <textarea name="dataInfo" cols="50" rows="5" form="userform5"></textarea>
     <br /><br />
     Media Options: <input type="radio" name="mediaOptions" value="dvd">DVD (max 10 discs) - $20 per DVD &nbsp; <input type="radio" name="mediaOptions" value="extUSB">External USB 500 GB Hard Drive - $350 each drive
     <br /><br />
     Delivery location (include Attn: as well as physical address to mail to):
-    <textarea name="deliveryLocation" cols="50" rows="5" form="usrform5"></textarea>
+    <textarea name="deliveryLocation" cols="50" rows="5" form="userform5"></textarea>
     <br /><br />
   </fieldset>
 </form>
 
-<form id="usrform6">
+<form id="userform6" ng-show="others">
   <fieldset>
     <legend><h2>Additional Information or Other type of work request</h2></legend>
     Notes:
-    <textarea name="notes1" cols="50" rows="5" form="usrform6"></textarea>
+    <textarea name="notes1" cols="50" rows="5" form="userform6"></textarea>
     <br /><br />
     Volume Estimates:
-    <textarea name="volumeEstimates" cols="50" rows="5" form="usrform6"></textarea>
+    <textarea name="volumeEstimates" cols="50" rows="5" form="userform6"></textarea>
     <br /><br />
   </fieldset>
 </form>
 
-<form id="usrform7">
+<form id="userform7" ng-show="newdocument">
   <fieldset>
     <legend><h2>Deliverables/Estimates from IBM</h2></legend>
     Completed By/Date:
-    <textarea name="completedBy" cols="50" rows="5" form="usrform7"></textarea>
+    <textarea name="completedBy" cols="50" rows="5" form="userform7"></textarea>
     <br /><br />
-    Characteristics of Project Deliverables (e.g. Tech, Functional etc) Assumptions & Risks:
-    <textarea name="charOfProjDeliverables" cols="50" rows="5" form="usrform7"></textarea>
+    Characteristics of Project Deliverables (e.g. Tech, Functional etc) Assumptions &amp; Risks:
+    <textarea name="charOfProjDeliverables" cols="50" rows="5" form="userform7"></textarea>
     <br /><br />
     Total Estimate (Cost/Timeframe):
-    <textarea name="totalEstimate" cols="50" rows="5" form="usrform7"></textarea>
+    <textarea name="totalEstimate" cols="50" rows="5" form="userform7"></textarea>
     <br /><br />
     Notes:
-    <textarea name="notes2" cols="50" rows="5" form="usrform7"></textarea>
+    <textarea name="notes2" cols="50" rows="5" form="userform7"></textarea>
     <br /><br />
   </fieldset>
 </form>
 
-<form id="usrform8">
+<form id="userform8">
   <fieldset>
     <legend><h2>Sign Off</h2></legend>
     Customer Approver: <input type="text" name="custApprover" maxlength="80">
