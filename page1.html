@@ -1,0 +1,43 @@
+  <fieldset>
+    <legend><h2>Request from Client</h2></legend>
+    Requester Name/E-mail:
+    <input type="text" ng-model="formData.requester">
+    <br /><br />
+    Summary<font color="red">*</font>:<br />
+    <textarea rows="4" cols="50" ng-model="formData.summary"></textarea>
+    <br /><br />
+    Buisness View:
+    <input type="text" ng-model="formData.bView" maxlength="25">
+    <br /><br />
+    Division(s) this is for (if applicable):
+    <input type="text" ng-model="formData.division" maxlength="80">
+    <br /><br />
+    Case Number:
+    <input type="number" ng-model="formData.caseNum" min="1">
+    <br /><br />
+    Requested Completion Date:
+    <input type="date" ng-model="formData.reqCompletionDate">
+    <br /><br />
+    Type of Request:<br />
+    <input type="checkbox" name="requestType1" value="newMap" ng-model="formData.newmap">&nbsp;New Map<br />
+    <input type="checkbox" name="requestType1" value="dataFlows" ng-model="formData.dataflowcomm">&nbsp;Data Flow/Communications<br />
+    <input type="checkbox" name="requestType1" value="archiveDataRetrieval" ng-model="formData.adataretrieval">&nbsp;Archive Data Retrieval<br />
+    <input type="checkbox" name="requestType1" value="newTP" ng-model="formData.newtradingp">&nbsp;New Trading Partner (TP) <br />
+    <input type="checkbox" name="requestType1" value="other" ng-model="formData.others">&nbsp;Other (reporting, etc., describe below)<br />
+    <input type="checkbox" name="requestType1" value="newDoc" ng-model="formData.newdocument">&nbsp;New Doc/Version for existing TP
+    <br /><br />
+    Detailed description of request<font color="red">*</font>:<br />
+    <textarea rows="4" cols="50" ng-model="formData.detailDiscrip" form="userform1"></textarea>
+    <br /><br />
+    Outbound files Preference:<br />
+    <input type="radio" ng-model="formData.outboundFilePreference" value="batched">Batched<br />
+    <input type="radio" ng-model="formData.outboundFilePreference" value="nonBatched">Non-Batched<br />
+    <br />
+    Mention the format/pattern (if any):
+    <input type="text" ng-model="formData.patternName" placeholder="Ex: ShipmentStatus_HDSUPPLYMG_%Datetime%.xml" size="50">
+    <br /><br />
+    Inbound Filename Requirements:
+    <input type="text" ng-model="formData.inboundFnameReq">
+    <br /><br />
+     <a ui-sref="form.page2"> next section</a>
+  </fieldset>

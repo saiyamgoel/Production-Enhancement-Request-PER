@@ -1,0 +1,48 @@
+<form id="userform3" ng-show="formData.newtradingp">
+  <fieldset>
+    <legend><h2>TP Details</h2></legend>
+    TP Company Name:
+    <input type="text" ng-model="formData.TPcomapnyName" maxlength="50">
+    <br /><br />
+    TP Address, City, State, Zip:
+    <input type="text" ng-model="formData.TPaddress" maxlength="80">
+    <br /><br />
+    TP Contact Name:
+    <input type="text" ng-model="formData.TPcontactName" maxlength="50">
+    <br /><br />
+    TP Contact Phone:
+    <input type="text" ng-model="formData.TPcontactPhone" maxlength="50">
+    <br /><br />
+    TP Contact Email:
+    <input type="text" ng-model="formData.TPcontactEmail" maxlength="50">
+    <br /><br />
+    Supplier # (if applicable):
+    <input type="text" ng-model="formData.suppliernum" maxlength="50">
+    <br /><br />
+    TP Lookup (application parent, SAP, etc):
+    <textarea ng-model="formData.tplookup" cols="50" rows="5" form="userform3"></textarea>
+    <br /><br />
+    TP Test Sender/Receiver Ids (include qualifiers, ISA and GS, UNB, UNH etc.):
+    <textarea ng-model="formData.tptestsendrecid" cols="50" rows="5" form="userform3"></textarea>
+    <br /><br />
+    TP Prod Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):
+    <textarea ng-model="formData.tpprodsendrecid" cols="50" rows="5" form="userform3"></textarea>
+    <br /><br />
+    Client Test Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):
+    <textarea ng-model="formData.clienttestsendrecid" cols="50" rows="5" form="userform3"></textarea>
+    <br /><br />
+    Client Prod Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):
+    <textarea ng-model="formData.clientprodsendrecid" cols="50" rows="5" form="userform3"></textarea>
+    <br /><br />
+    Communications Method (if existing communication, please include process ID):
+    <textarea ng-model="formData.commmethod" cols="50" rows="5" form="userform3"></textarea>
+    <br /><br />
+    Which direction, standard, documents and versions will be traded?:
+    <textarea ng-model="formData.whichdir" cols="50" rows="5" form="userform3"></textarea>
+    <br /><br />
+    When will testing start? When will TP go-live?:
+    <textarea ng-model="formData.whentestingstart" cols="50" rows="5" form="userform3"></textarea>
+    <br /><br />
+  </fieldset>
+</form>
+<a ui-sref="form.page4"> next section</a>

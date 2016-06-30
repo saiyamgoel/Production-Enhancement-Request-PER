@@ -1,0 +1,18 @@
+<form id="userform7" ng-show="formData.newdocument">
+  <fieldset>
+    <legend><h2>Deliverables/Estimates from IBM</h2></legend>
+    Completed By/Date:
+    <textarea ng-model="formData.completedBy" cols="50" rows="5" form="userform7"></textarea>
+    <br /><br />
+    Characteristics of Project Deliverables (e.g. Tech, Functional etc) Assumptions &amp; Risks:
+    <textarea ng-model="formData.charOfProjDeliverables" cols="50" rows="5" form="userform7"></textarea>
+    <br /><br />
+    Total Estimate (Cost/Timeframe):
+    <textarea ng-model="formData.totalEstimate" cols="50" rows="5" form="userform7"></textarea>
+    <br /><br />
+    Notes:
+    <textarea ng-model="formData.notes2" cols="50" rows="5" form="userform7"></textarea>
+    <br /><br />
+  </fieldset>
+</form>
+<a ui-sref="form.page8"> next section</a>

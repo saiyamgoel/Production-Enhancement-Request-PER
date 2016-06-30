@@ -1,0 +1,15 @@
+<form id="userform4" ng-show="formData.dataflowcomm">
+  <fieldset>
+    <legend><h2>Data Flow Communication Details</h2></legend>
+    Type of Request:<br />
+    <input type="radio" ng-model="formData.requestType2" value="newDataFlow">&nbsp;New Data Flow (Connect: Direct routing, new path etc)<br />
+    <input type="radio" ng-model="formData.requestType2" value="changeExistingDataFlow">&nbsp;Changes to existing data flow<br />
+    <input type="radio" ng-model="formData.requestType2" value="newCommFlow">&nbsp;New communications flow (VAN or AS2 protocol, for TP or client use)<br />
+    <input type="radio" ng-model="formData.requestType2" value="changeTypeOfComm">&nbsp;Changes to type of communications (HTTPS, FTP etc)<br />
+    <br /><br />
+    Details of data flow request:
+    <textarea ng-model="formData.dataFlowReqDetails" cols="50" rows="5" form="userform4"></textarea>
+    <br /><br />
+  </fieldset>
+</form>
+<a ui-sref="form.page5"> next section</a>

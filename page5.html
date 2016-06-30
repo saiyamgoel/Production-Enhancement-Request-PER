@@ -1,0 +1,19 @@
+<form id="userform5" ng-show="formData.adataretrieval">
+  <fieldset>
+    <legend><h2>Archive Data Retrieval Details</h2></legend>
+    Trading Partner Identifier (Provide the ISA, UNB etc, ID for the trading partner):
+    <textarea ng-model="formData.TPidentifier" cols="50" rows="5" form="userform5"></textarea>
+    <br /><br />
+    Date of the data requested: <input type="date" ng-model="formData.dataReqDate">
+    <br /><br />    
+    Identifying information about the data (such as PO #, Invoice #, ISA control # etc):
+    <textarea ng-model="formData.dataInfo" cols="50" rows="5" form="userform5"></textarea>
+    <br /><br />
+    Media Options: <input type="radio" ng-model="formData.mediaOptions" value="dvd">DVD (max 10 discs) - $20 per DVD &nbsp; <input type="radio" ng-model="formData.mediaOptions" value="extUSB">External USB 500 GB Hard Drive - $350 each drive
+    <br /><br />
+    Delivery location (include Attn: as well as physical address to mail to):
+    <textarea ng-model="formData.deliveryLocation" cols="50" rows="5" form="userform5"></textarea>
+    <br /><br />
+  </fieldset>
+</form>
+<a ui-sref="form.page6"> next section</a>
