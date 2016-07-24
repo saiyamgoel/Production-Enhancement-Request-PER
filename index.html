@@ -1,13 +1,529 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US"> 
 <head>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="geo.country" content="US">
+<meta name="dcterms.date" content="2016-06-29">
+<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016">
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
-<script src="app.js"></script>
+	<title>Production Enhancement Request (PER)</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+<link rel="SHORTCUT ICON" href="//www.ibm.com/favicon.ico">
+<link href="http://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" title="www" type="text/css" />
+<link href="http://1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet" title="www" type="text/css" />
+<link href="http://1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet" title="www" type="text/css" />
+<link href="http://1.www.s81c.com/common/v18/css/syntaxhighlighter.css" rel="stylesheet" title="www" type="text/css" />
+	         
+<!--<script src="http://www.ibm.com/common/stats/ida_stats.js"></script>-->
+<script src="http://1.www.s81c.com/common/v18/js/www.js"></script>
+<script src="http://1.www.s81c.com/common/v18/js/forms.js"></script>
+<script src="http://1.www.s81c.com/common/v18/js/tables.js"></script>
+<script src="http://1.www.s81c.com/common/v18/js/syntaxhighlighter.js"></script>
+	         
+<!--<link href="http://www.ibm.com/web/wcm/connect/standards/9df96bba-8f0a-470d-a7e4-7486c4a2e896/wcm-css-v18-beta.css?MOD=AJPERES" rel="stylesheet" title="www" type="text/css" />-->
+    
+<!--<script type="text/javascript" src="http://www.ibm.com/web/wcm/connect/standards/1d2ffac0-a5cb-4439-ab2c-5cd114a53b44/ibmcolorswatch.js?MOD=AJPERES"></script>-->
+<script type="text/javascript" src="http://www.ibm.com/web/wcm/connect/standards/3b4bfbfe-55d4-4d5d-8e4d-efa56a3b26a9/new-js.js?MOD=AJPERES"></script>
 </head>
-<body ng-app="per">
- <div ui-view></div>
-</body>
+
+<body id="ibm-com" class="ibm-type">	
+
+<div id="ibm-top" class="ibm-landing-page">
+	<div id="ibm-masthead" role="banner" aria-label="IBM">				
+		<div id="ibm-universal-nav" role="navigation">
+			<div id="ibm-home">
+				<a href="http://www.ibm.com/in-en/">IBM®</a>
+			</div>
+			<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead"></div>
+		</div>
+	</div>			
+	<div id="ibm-content-wrapper">
+		<div class="ibm-columns">
+			<div class="ibm-col-6-1">&nbsp;</div>
+				<div class="ibm-col-6-4">
+					<form ng-app="" id="per-form" name="per-form" class="ibm-column-form" method="post" action="thank-you.html">
+    					<br />
+    					<h2 class="ibm-h2">Request from Client</h2>
+    					<p>
+        					<label for="">Requester Name/E-mail:</label>
+        					<span>
+            					<input type="text" value="" size="40" id="" name="requester" ng-model="requester" style="margin-left: 75px;">
+        					</span>
+    					</p>
+   						<p>
+       						<label for="">Summary:<span class="ibm-required">*</span></label>
+					        <span>
+					            <textarea id="" rows="7" cols="38" name="summary" form="per-form" ng-model="summary" style="margin-left: 75px;" required></textarea>
+					            <br />
+					        </span>
+					    </p>
+					    <p>
+					        <label for="">Business View:</label>
+						    <span>
+					            <input type="text" value="" size="40" id="" name="bView" maxlength="25" ng-model="businessView" style="margin-left: 75px;">
+					        </span>
+					    </p>
+					    <p>
+					        <label for="">Division(s) this is for (if applicable):</label>
+					        <span>
+						        <input type="text" value="" size="40" id="" name="division" maxlength="80" ng-model="divisions" style="margin-left: 75px;">
+					        </span>
+					    </p>
+					    <p>
+					        <label for="">Case Number:</label>
+					        <span>
+					            <input type="text" value="" size="40" id="" name="caseNum" pattern="[0-9]{15}" ng-model="caseNum" style="margin-left: 75px;">
+					        </span>
+					    </p>
+					    <p>
+					        <label for="">Requested Completion Date:</label>
+					        <span>
+					            <input type="date" value="" size="40" id="" name="reqCompletionDate" ng-model="reqCompDate" style="margin: 0; box-shadow: 0 0 0 1px transparent inset; height: 2.25em; line-height: 2.25em; text-indent: 10px; border: 1px solid #959f9f; font-style: normal; max-width: 100%; transition: .3s border-color,.3s background,.3s box-shadow; font-family: 'HelvRegularIBM','Helvetica Neue',Arial,sans-serif; color: #323232; font-size: 1rem; margin-left: 75px;">
+					        </span>
+					    </p>
+					    <p class="ibm-form-elem-grp">
+					        <label class="ibm-form-grp-lbl" >Type of Request:</label>
+					        <span class="ibm-input-group">
+					            <input id="check1" name="requestType1" type="checkbox" ng-model="checkbox1" style="margin-left: 75px;" /> New Map
+					            <br /><input id="check2" name="requestType1" type="checkbox" ng-model="checkbox2" style="margin-left: 75px;" /> Data Flow/Communications
+						        <br /><input id="check3" name="requestType1" type="checkbox" ng-model="checkbox3" style="margin-left: 75px;" /> Archive Data Retrieval
+						        <br /><input id="check4" name="requestType1" type="checkbox" ng-model="checkbox4" style="margin-left: 75px;" /> New Trading Partner (TP)
+						        <br /><input id="check5" name="requestType1" type="checkbox" ng-model="checkbox5" style="margin-left: 75px;" /> Other (reporting, etc., describe below)
+						        <br /><input id="check6" name="requestType1" type="checkbox" ng-model="checkbox6" style="margin-left: 75px;" /> New Doc/Version for existing TP
+						    </span>
+						</p>
+						<p>
+						    <label for="">Detailed description of request:<span class="ibm-required">*</span></label>
+						    <span>
+						        <textarea id="" size="40" rows="7" cols="38" name="detailedDesc" form="per-form" ng-model="detailedDesc" style="margin-left: 75px;" required></textarea>
+						    </span>
+						</p>
+						<p class="ibm-form-elem-grp">
+						    <label class="ibm-form-grp-lbl" id="">Outbound Files Preference:</label>
+						    <span class="ibm-input-group ibm-radio-group">
+						        <input id="" name="outboundFilePreference" type="radio" value="batched" ng-model="outFilePref" style="margin-left: 75px;" /> <label for="">Batched</label>
+						        <br /><input id="" name="outboundFilePreference" type="radio" value="nonBatched" ng-model="outFilePref" style="margin-left: 75px;" /> <label for="">Non-Batched</label>
+						    </span>
+						</p>
+						    <p>
+						        <label for="">Mention the format/pattern (if any):</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="patternName" ng-model="formatPattern" style="margin-left: 75px;">
+						            <a class="ibm-information-link" href="#" onclick="alert('Ex: ShipmentStatus_HDSUPPLYMG_%Datetime%.xml');return false;" title="Information Link">Information</a>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Inbound Filename Requirements:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="inboundFnameReq" ng-model="inboundFileReq" style="margin-left: 75px;">
+						        </span>
+						</p>
+					<div class="ibm-column-form" ng-show="checkbox1">
+						<br />
+						<h2 class="ibm-h2">Map Change Details</h2>
+						    <p>
+						        <label for="">Map Name to Change:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="newMapName" maxlength="50" ng-model="mapName" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Ensure that you have included:</label>
+						    </p>
+						    <p>
+						        <label for="">A test file from TP (Inbound Map):</label>
+						        <span>
+						            <input id="" type="file" accept=".*" data-widget="fileinput" data-multiple="true" ng-model="testFileTP" style="margin-left: 75px;" />
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">A test file from client (if Outbound Map):</label>
+						        <span>
+						            <input id="" type="file" accept=".*" data-widget="fileinput" data-multiple="true"  ng-model="testFileClient" style="margin-left: 75px;"/>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Details on any codelist or table updates (ship-to locations, DEA #s, etc):</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="codelistdetails1" maxlength="25" ng-model="detailsOnCodelist" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <br />
+						    <h2 class="ibm-h2">New Map Details</h2>
+						    <p>
+						        <label for="">Transaction standard, type and direction:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="transtypedir" maxlength="50" ng-model="transactionStandard" style="margin-left: 75px;">
+						            <a class="ibm-information-link" href="#" onclick="alert('Ex: X12 850 v.4010');return false;" title="Information Link">Information</a>
+						        </span>
+						    </p>
+						    <p class="ibm-form-elem-grp">
+						        <label class="ibm-form-grp-lbl" id="">Application Layout:</label>
+						        <span class="ibm-input-group ibm-radio-group">
+						            <input id="" name="applayout" type="radio" value="useexistingapp" ng-model="appLayout" style="margin-left: 75px;" /> <label for="">Use existing app layout (specify below)</label>
+						            <br /><input id="" name="applayout" type="radio" value="usenewapp" ng-model="appLayout" style="margin-left: 75px;" /> <label for="">Use new app layout (included with request)</label>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Existing app layout to use:<span class="ibm-required">*</span></label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="applayoutdetails" maxlength="50" ng-model="existingAppLayout" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Existing maps to use (if applicable):<span class="ibm-required">*</span></label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="existingmapstouse" form="per-form" ng-model="existingMap" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Ensure that you have included:</label>
+						    </p>
+						    <p>
+						        <label for="">A test file from TP (Inbound Map):</label>
+						        <span>
+						            <input id="" type="file" accept=".*" data-widget="fileinput" data-multiple="true" style="margin-left: 75px;" />
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">A test file from client (if Outbound Map):</label>
+						        <span>
+						            <input id="" type="file" accept=".*" data-widget="fileinput" data-multiple="true" style="margin-left: 75px;" />
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Specifications/Guidelines from TP:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="guidelinesfromTP" ng-model="specsGuidelines" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Details on any codelist or table entries needed (ship-to locations, DEA #s etc):</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="codelistdetails2" ng-model="detailsOnCodelist2" style="margin-left: 75px;">
+						        </span>
+						</p>
+					</div>
+					<div class="ibm-column-form" ng-show="checkbox4">
+						<br />
+						<h2 class="ibm-h2">TP Details</h2>
+						    <p>
+						        <label for="">TP Company Name:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="TPcompanyName" maxlength="50" ng-model="TPcompanyName" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">TP Address, City, State, Zip:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="TPaddress" maxlength="80" ng-model="TPaddress" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">TP Contact Name:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="TPcontactName" maxlength="50" ng-model="TPcontactName" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">TP Contact Phone:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="TPcontactPhone" maxlength="50" ng-model="TPcontactPhone" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">TP Contact Email:</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="TPcontactEmail" maxlength="50" ng-model="TPcontactEmail" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Supplier # (if applicable):</label>
+						        <span>
+						            <input type="text" value="" size="40" id="" name="supplierNum" maxlength="50" ng-model="supplierNum" style="margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">TP Lookup (application parent, SAP, etc):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="tplookup" form="per-form" ng-model="tplookup" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">TP Test Sender/Receiver Ids (include qualifiers, ISA and GS, UNB, UNH etc.):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="tptestsendrecid" form="per-form" ng-model="tptestsendrecid" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">TP Prod Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="tpprodsendrecid" form="per-form" ng-model="tpprodsendrecid" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Client Test Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="clienttestsendrecid" form="per-form" ng-model="clienttestsendrecid" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Client Prod Sender/Receiver IDs (include qualifiers, ISA and GS, UNB, UNH, etc):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="clientprodsendrecid" form="per-form" ng-model="clientprodsendrecid" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Communications Method (if existing communication, please include process ID):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="commmethod" form="per-form" ng-model="commmethod" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Which direction, standard, documents and versions will be traded?</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="whichdir" form="per-form" ng-model="whichdir" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">When will testing start? When will TP go-live?</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="whentestingstart" form="per-form" ng-model="whentestingstart" style="margin-left: 75px;"></textarea>
+						        </span>
+						</p>
+					</div>
+					<div class="ibm-column-form" ng-show="checkbox2">
+						<br />
+						<h2 class="ibm-h2">Data Flow Communication Details</h2>
+						    <p class="ibm-form-elem-grp">
+						        <label class="ibm-form-grp-lbl" id="">Type of Request:</label>
+						        <span class="ibm-input-group">
+						            <input id="" name="requestType2" type="checkbox" value="newDataFlow" ng-model="newDataFlow" style="margin-left: 75px;" /> <label for="">New Data Flow (Connect: Direct routing, new path etc)</label>
+						            <br /><input id="" name="requestType2" type="checkbox" value="changeExistingDataFlow" ng-model="changeExistingDataFlow" style="margin-left: 75px;" /> <label for="">Changes to existing data flow</label>
+						            <br /><input id="" name="requestType2" type="checkbox" value="newCommFlow" ng-model="newCommFlow" style="margin-left: 75px;" /> <label for="">New communications flow (VAN or AS2 protocol, for TP or client use)</label>
+						            <br /><input id="" name="requestType2" type="checkbox" value="changeTypeOfComm" ng-model="changeTypeOfComm" style="margin-left: 75px;" /> <label for="">Changes to type of communications (HTTPS, FTP etc)</label>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Details of data flow request:</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="dataFlowReqDetails" form="per-form" ng-model="dataFlowRequest" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+					</div>
+					<div class="ibm-column-form" ng-show="checkbox3">
+						<br />
+						<h2 class="ibm-h2">Archive Data Retrieval Details</h2>
+						    <p>
+						        <label for="">Trading Partner Identifier (Provide the ISA, UNB etc, ID for the trading partner):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="TPidentifier" form="per-form" ng-model="TPidentifier" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Date of the data requested:</label>
+						        <span>
+						            <input type="date" value="" size="40" id="" name="dataReqDate" ng-model="dataReqDate" style="margin: 0; box-shadow: 0 0 0 1px transparent inset; height: 2.25em; line-height: 2.25em; text-indent: 10px; border: 1px solid #959f9f; font-style: normal; max-width: 100%; transition: .3s border-color,.3s background,.3s box-shadow; font-family: 'HelvRegularIBM','Helvetica Neue',Arial,sans-serif; color: #323232; font-size: 1rem; margin-left: 75px;">
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Identifying information about the data (such as PO #, Invoice #, ISA control # etc):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="dataInfo" form="per-form" ng-model="dataInfo" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p class="ibm-form-elem-grp">
+						        <label class="ibm-form-grp-lbl" id="">Media Options:</label>
+						        <span class="ibm-input-group ibm-radio-group">
+						            <input id="" name="mediaOptions" type="radio" value="dvd" ng-model="mediaOptions" style="margin-left: 75px;" /> <label for="">DVD (max 10 discs) - $20 per DVD</label>
+						            <br /><input id="" name="mediaOptions" type="radio" value="extUSB" ng-model="mediaOptions" style="margin-left: 75px;" /> <label for="">External USB 500 GB Hard Drive - $350 each drive</label>
+						        </span>
+						    </p>
+						<p>
+						    <label for="">Delivery location (include Attn: as well as physical address to mail to):</label>
+						    <span>
+						        <textarea id="" rows="7" cols="38" name="deliveryLocation" form="per-form" ng-model="deliveryLocation" style="margin-left: 75px;"></textarea>
+						    </span>
+						</p>
+					</div>
+					<div class="ibm-column-form" ng-show="checkbox5">
+						<br />
+						<h2 class="ibm-h2">Additional Information or Other type of work request</h2>
+						<p>
+						    <label for="">Notes:</label>
+						    <span>
+						        <textarea id="" rows="7" cols="38" name="notes1" form="per-form" ng-model="notes1" style="margin-left: 75px;"></textarea>
+						    </span>
+						</p>
+						<p>
+						    <label for="">Volume Estimates:</label>
+						    <span>
+						        <textarea id="" rows="7" cols="38" name="volumeEstimates" form="per-form" ng-model="volumeEstimates" style="margin-left: 75px;"></textarea>
+						    </span>
+						</p>
+					</div>
+					<div class="ibm-column-form" ng-show="checkbox6">
+						    <br />
+						    <h2 class="ibm-h2">Deliverables/Estimates from IBM</h2>
+						    <p>
+						        <label for="">Completed By/Date:</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="completedBy" form="per-form" ng-model="completedBy" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Characteristics of Project Deliverables (e.g. Tech, Functional etc) Assumptions &amp; Risks:</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="charOfProjDeliverables" form="per-form" ng-model="charOfProjDeliverables" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Total Estimate (Cost/Timeframe):</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="totalEstimate" form="per-form" ng-model="totalEstimate" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+						    <p>
+						        <label for="">Notes:</label>
+						        <span>
+						            <textarea id="" rows="7" cols="38" name="notes2" form="per-form" ng-model="notes2" style="margin-left: 75px;"></textarea>
+						        </span>
+						    </p>
+					</div>
+					<div class="ibm-column-form">
+						<br />
+						<h2 class="ibm-h2">Sign Off</h2>
+						<p>
+						    <label for="">Customer Approver:</label>
+						    <span>
+						        <input type="text" value="" size="40" id="" name="custApprover" maxlength="80" ng-model="custApprover" style="margin-left: 75px;">
+						    </span>
+						</p>
+						<p>
+						    <label for="">Customer Signature:</label>
+						    <span>
+						        <input id="" type="file" accept=".*" data-widget="fileinput" style="margin-left: 75px;" />
+						    </span>
+						</p>
+						<p>
+						    <label for="">IBM Approver:</label>
+						    <span>
+						        <input type="text" value="" size="40" id="" name="IBMApprover" maxlength="80" ng-model="IBMApprover" style="margin-left: 75px;">
+						    </span>
+						</p>
+						<p>
+						    <label for="">IBM Signature:</label>
+						    <span>
+						        <input id="" type="file" accept=".*" data-widget="fileinput" style="margin-left: 75px;" />
+						    </span>
+						</p>
+						<br />
+						<p style="text-align: center;">
+							<input type="submit" value="Submit" ng-click="saveData()" style="margin-right: 25px;">
+							<input type="reset" value="Reset" style="margin-left: 25px;">
+						</p>
+						<br />
+						<p class="ibm-ind-link ibm-right">
+    						<a class="ibm-anchor-up-link" href="#ibm-top">Back to top</a>
+						</p> 
+					</div>
+					</form>
+				</div>
+			<div class="ibm-col-6-1">&nbsp;</div>
+		</div>
+	</div>
+</div>
+<div id="ibm-footer-module"></div>
+<footer role="contentinfo" aria-label="IBM">
+	<div id="ibm-footer">
+		<!--<ul>
+			<li><a href="http://www.ibm.com/contact/in/en/?lnk=flg-cont-inen">Contact</a></li>
+			<li><a href="http://www.ibm.com/privacy/in/en/?lnk=flg-priv-inen">Privacy</a></li>
+			<li><a href="http://www.ibm.com/legal/in/en/?lnk=flg-tous-inen">Terms of use</a></li>
+			<li><a href="http://www.ibm.com/accessibility/in/en/?lnk=flg-acce-inen">Accessibility</a></li>
+		</ul>-->
+		<ul>
+			<li>Copyright &copy; IBM India Pvt. Ltd. 2016</li>
+		</ul>
+	</div>
+</footer>
+<script>
+	var app = angular.module('perFormApp', []);
+	app.controller('formCtrl', function($scope) {
+
+	}
+</script>
+
+<script>
+    var checkbox1 = $("#check1");
+    checkbox1.change(function(event) {
+    var checkbox1 = event.target;
+    if (checkbox1.checked) {
+        $("#userform2").show();
+    }
+    else {
+        $("#userform2").hide();
+    }
+});
+    var checkbox2 = $("#check2");
+    checkbox2.change(function(event) {
+    var checkbox2 = event.target;
+    if (checkbox2.checked) {
+        $("#userform4").show();
+    }
+    else {
+        $("#userform4").hide();
+    }
+});
+    var checkbox3 = $("#check3");
+    checkbox3.change(function(event) {
+    var checkbox3 = event.target;
+    if (checkbox3.checked) {
+        $("#userform5").show();
+    }
+    else {
+        $("#userform5").hide();
+    }
+});
+    var checkbox4 = $("#check4");
+    checkbox4.change(function(event) {
+    var checkbox4 = event.target;
+    if (checkbox4.checked) {
+        $("#userform3").show();
+    }
+    else {
+        $("#userform3").hide();
+    }
+});
+    var checkbox5 = $("#check5");
+    checkbox5.change(function(event) {
+    var checkbox5 = event.target;
+    if (checkbox5.checked) {
+        $("#userform6").show();
+    }
+    else {
+        $("#userform6").hide();
+    }
+});
+    var checkbox6 = $("#check6");
+    checkbox6.change(function(event) {
+    var checkbox6 = event.target;
+    if (checkbox6.checked) {
+        $("#userform7").show();
+    }
+    else {
+        $("#userform7").hide();
+    }
+});
+</script>
+
+</body> 
 </html>
